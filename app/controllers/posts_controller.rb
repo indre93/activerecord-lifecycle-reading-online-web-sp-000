@@ -26,4 +26,10 @@ class PostsController < ApplicationController
 	def edit
 	  @post = Post.find(params[:id])
 	end
+
+  private
+
+  def song_params
+    params.require(:post).permit!
+  end
 end
